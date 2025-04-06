@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dropbox:
+    build: .
+    container_name: dropbox
+    restart: unless-stopped
+    environment:
+      DBOX_UID: ${DBOX_UID:-1000}
+      DBOX_GID: ${DBOX_GID:-1000}
+    volumes:
+      - ${DROPBOX_VOLUME}:/dbox/Dropbox
+      # - /path/to/local/dropbox/config:/dbox/.dropbox
