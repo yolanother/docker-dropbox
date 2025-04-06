@@ -58,6 +58,7 @@ ENV ENABLE_MONITORING=false
 
 # Install init script and dropbox command line wrapper
 COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 
 # Install monitoring script
 COPY monitoring.py /
